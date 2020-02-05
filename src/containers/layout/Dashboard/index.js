@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import './style.css';
+import { Route, Switch, Link } from 'react-router-dom';
+import pageRoutes from '../../../config/router';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -26,140 +28,34 @@ const Dashboard = () => {
       onCollapse={onCollapse}
       >
       <div className="logo" />
-      <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']}>
-        <Menu.Item key="1">
-          <Icon type="user" />
-          <span className="nav-text">nav 1</span>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <Icon type="video-camera" />
-          <span className="nav-text">nav 2</span>
-        </Menu.Item>
-        <Menu.Item key="3">
-          <Icon type="upload" />
-          <span className="nav-text">nav 3</span>
-        </Menu.Item>
-        <Menu.Item key="4">
-          <Icon type="bar-chart" />
-          <span className="nav-text">nav 4</span>
-        </Menu.Item>
-        <Menu.Item key="5">
-          <Icon type="cloud-o" />
-          <span className="nav-text">nav 5</span>
-        </Menu.Item>
-        <Menu.Item key="6">
-          <Icon type="appstore-o" />
-          <span className="nav-text">nav 6</span>
-        </Menu.Item>
-        <Menu.Item key="7">
-          <Icon type="team" />
-          <span className="nav-text">nav 7</span>
-        </Menu.Item>
-        <Menu.Item key="8">
-          <Icon type="shop" />
-          <span className="nav-text">nav 8</span>
-        </Menu.Item>
+      <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
+        {pageRoutes.map((data, i) => {
+          return (
+            <Menu.Item key={i}>
+              <Link to={data.link}>
+                <Icon type={data.icon} />
+                <span className="nav-text">{data.name}</span>
+              </Link>
+            </Menu.Item>
+          );
+        })}
       </Menu>
     </Sider>
     <Layout>
       <Header style={{ background: '#fff', padding: 0 }} />
       <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
         <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
-          ...
-          <br />
-          Really
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          long
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          ...
-          <br />
-          content
+          <Switch>
+            {pageRoutes.map((data, i) => {
+              return (
+                <Route 
+                  path={data.path} 
+                  component={data.component}
+                  exact
+                />
+              );
+            })}
+          </Switch>
         </div>
       </Content>
       <Footer style={{ textAlign: 'center' }}>React Ant Design Dashboard ©2020 Created by ECL91</Footer>
