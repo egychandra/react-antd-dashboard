@@ -3,7 +3,7 @@ import swal from '@sweetalert/with-react';
 
 const showAlert = () => {
   swal({
-    text: 'Search for a movie. e.g. "La La Land".',
+    text: 'Search for a movie. e.g. "Naruto".',
     content: "input",
     button: {
       text: "Search!",
@@ -11,6 +11,7 @@ const showAlert = () => {
     },
   })
   .then(name => {
+    // eslint-disable-next-line no-throw-literal
     if (!name) throw null;
       return fetch(`https://itunes.apple.com/search?term=${name}&entity=movie`);
   })

@@ -6,7 +6,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'name',
     key: 'name',
-    render: text => <a>{text}</a>,
+    render: text => <span>{text}</span>,
   },
   {
     title: 'Age',
@@ -43,9 +43,9 @@ const columns = [
     key: 'action',
     render: (text, record) => (
       <span>
-        <a>Invite {record.name}</a>
+        <span>Invite {record.name}</span>
         <Divider type="vertical" />
-        <a>Delete</a>
+        <span>Delete</span>
       </span>
     ),
   },
