@@ -5,13 +5,6 @@ import RatingAlert from '../../containers/pages/alert';
 const pageRoutes = () => {
   return [
     {
-      path: '/alert',
-      link: '/alert',
-      icon: 'alert',
-      name: 'Alert',
-      component: RatingAlert
-    },
-    {
       path: '/table',
       link: '/table',
       icon: 'table',
@@ -24,6 +17,13 @@ const pageRoutes = () => {
       icon: 'bar-chart',
       name: 'Chart',
       component: Chart
+    },
+    {
+      path: '/alert',
+      link: '/alert',
+      icon: 'alert',
+      name: 'Alert',
+      component: RatingAlert
     }
   ]
 }
