@@ -1,15 +1,16 @@
 import Home from '../../containers/pages/Home';
 import dataTable from '../../containers/pages/table';
 import Chart from '../../containers/pages/chart';
+import RatingAlert from '../../containers/pages/alert';
 
 const pageRoutes = () => {
   return [
     {
-      path: '/home',
-      link: '/home',
-      icon: 'home',
-      name: 'Home',
-      component: Home
+      path: '/alert',
+      link: '/alert',
+      icon: 'alert',
+      name: 'Alert',
+      component: RatingAlert
     },
     {
       path: '/table',
