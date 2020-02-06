@@ -1,7 +1,10 @@
 .logo {
   height: 32px;
-  background: rgba(255, 255, 255, 0.2);
-  margin: 16px;
+  text-align: center;
+  margin: 10px;
+  color: white;
+  font-size: 24px;
+
 }
 
 .trigger {
@@ -14,4 +17,20 @@
 
 .trigger:hover {
   color: #1890ff;
+}
+
+.navBar {
+  margin-top: 24px;
+  margin-left: 100px;
+  margin-right: 21px;
+  margin-bottom: 30px;
+  overflow: 'initial'
+}
+
+.navBarAktif {
+  margin-top: 24px;
+  margin-left: 215px;
+  margin-right: 21px;
+  margin-bottom: 30px;
+  overflow: 'initial'
 }

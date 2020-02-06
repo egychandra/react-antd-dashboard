@@ -1,31 +1,31 @@
-import About from '../../containers/pages/About';
-import Contact from '../../containers/pages/Contact';
 import Home from '../../containers/pages/Home';
+import dataTable from '../../containers/pages/table';
+import Chart from '../../containers/pages/chart';
 
 const pageRoutes = () => {
   return [
     {
-      path: '/about',
-      link: '/about',
-      icon: 'user',
-      name: 'About',
-      component: About
-    },
-    {
-      path: '/contact',
-      link: '/contact',
-      icon: 'video-camera',
-      name: 'Contact',
-      component: Contact
-    },
-    {
       path: '/home',
       link: '/home',
-      icon: 'upload',
+      icon: 'home',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/table',
+      link: '/table',
+      icon: 'table',
+      name: 'Table',
+      component: dataTable
+    },
+    {
+      path: '/chart',
+      link: '/chart',
+      icon: 'bar-chart',
+      name: 'Chart',
+      component: Chart
     }
   ]
 }
 
-export default pageRoutes()
+export default pageRoutes();

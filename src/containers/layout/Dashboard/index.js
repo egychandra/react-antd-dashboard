@@ -13,9 +13,9 @@ const Dashboard = () => {
   const onCollapse = () => {
     setCollapsed(!collapsed);
   };
-
+  
   return (
-    <Layout>
+    <Layout style={{ minHeight: '100vh' }}>
     <Sider
       style={{
         overflow: 'auto',
@@ -27,7 +27,7 @@ const Dashboard = () => {
       collapsed={collapsed} 
       onCollapse={onCollapse}
       >
-      <div className="logo" />
+      <div className="logo" >ECL91</div>
       <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
         {pageRoutes.map((data, i) => {
           return (
@@ -43,8 +43,8 @@ const Dashboard = () => {
     </Sider>
     <Layout>
       <Header style={{ background: '#fff', padding: 0 }} />
-      <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
-        <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
+      <Content className={collapsed ? "navBar" : "navBarAktif"}>
+        <div style={{ padding: '25px 64px 0', background: '#fff', textAlign: 'center' }}>
           <Switch>
             {pageRoutes.map((data, i) => {
               return (
@@ -58,7 +58,7 @@ const Dashboard = () => {
           </Switch>
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>React Ant Design Dashboard ©2020 Created by ECL91</Footer>
+      <Footer style={{ textAlign: 'center', background: 'rgb(255 255 255)' }}>React Ant Design Dashboard ©2020 Created by ECL91</Footer>
     </Layout>
   </Layout>
   );
